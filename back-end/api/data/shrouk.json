@@ -1,0 +1,62 @@
+[{
+	"_id": {
+		"$oid": "5a96da64c3a5bd55f4923883"
+	},
+	"name": "dress",
+	"price": 200,
+	"seller": "shrouk",
+	"createdAt": {
+		"$date": "2018-02-28T16:35:48.766Z"
+	},
+	"component": "C1",
+	"__v": 0,
+	"updatedAt": {
+		"$date": "2018-02-28T16:41:39.400Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "5a96db9025eb766708d4f995"
+	},
+	"name": "t-shirt",
+	"price": 100,
+	"seller": "shrouk",
+	"createdAt": {
+		"$date": "2018-02-28T16:40:48.239Z"
+	},
+	"component": "C1",
+	"__v": 0,
+	"updatedAt": {
+		"$date": "2018-02-28T16:42:04.119Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "5a96dba625eb766708d4f996"
+	},
+	"name": "scarve",
+	"price": 300,
+	"seller": "shrouk",
+	"createdAt": {
+		"$date": "2018-02-28T16:41:10.164Z"
+	},
+	"component": "C1",
+	"__v": 0,
+	"updatedAt": {
+		"$date": "2018-02-28T16:42:14.043Z"
+	}
+},
+{
+	"_id": {
+		"$oid": "5a96dc1225eb766708d4f997"
+	},
+	"name": "shoose",
+	"price": 251,
+	"seller": "shrouk",
+	"createdAt": {
+		"$date": "2018-02-28T16:42:58.540Z"
+	},
+	"component": "C1",
+	"__v": 0
+}]
+
