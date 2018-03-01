@@ -62,8 +62,8 @@ export class FashionComponent implements OnInit {
     ngOnInit() {
         this.fashionService.getProducts().subscribe(
             (res: Response) => {
-                console.log(res.data)
-                this.data = res.data;
+              //  console.log(res.data)
+               // this.data = res.data;
             }
         );
 
