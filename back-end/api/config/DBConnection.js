@@ -57,7 +57,7 @@ mongoose.connect(dburl, function(err) {
   });
 });
 
-require('../models/Product');
+require('../models/Dina');
 require('../models/users');
 
 require('../models/Member');

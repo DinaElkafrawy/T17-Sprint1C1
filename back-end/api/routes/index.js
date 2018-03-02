@@ -1,6 +1,6 @@
 var express = require('express'),
   router = express.Router(),
-  productCtrl = require('../controllers/ProductController');
+  productCtrl = require('../controllers/DinaController');
 
   const authentication = require('../controllers/authentication')(router);
   app = express();
@@ -8,15 +8,15 @@ var express = require('express'),
 
 
 //-------------------------------Product Routes-----------------------------------
-router.get('/product/getProducts', productCtrl.getProducts);
-router.get('/product/getProduct/:productId', productCtrl.getProduct);
+router.get('/dina/getDina', productCtrl.getDina);
+router.get('/dina/getDina/:productId', productCtrl.getDina);
 router.get(
-  '/product/getProductsBelowPrice/:price',
-  productCtrl.getProductsBelowPrice
+  '/dina/getDinaBelowPrice/:price',
+  productCtrl.getDinaBelowPrice
 );
-router.post('/product/createProduct', productCtrl.createProduct);
-router.patch('/product/updateProduct/:productId', productCtrl.updateProduct);
-router.delete('/product/deleteProduct/:productId', productCtrl.deleteProduct);
+router.post('/dina/createDina', productCtrl.createDina);
+router.patch('/dina/updateDina/:productId', productCtrl.updateDina);
+router.delete('/dina/deleteDina/:productId', productCtrl.deleteDina);
 
 
 app.use('/authentication' , authentication);

@@ -7,16 +7,19 @@ export class FashionService {
 
     constructor(private httpClient: HttpClient) { }
 
-    createProduct(name:string, price:number) {
-        return this.httpClient.post(environment.apiUrl + 'product/createProduct', {'name':name, 'price':price});
+    createDina(name:string, price:number, component:string, seller: string) {
+        return this.httpClient.post(environment.apiUrl + 'dina/createDina', {'name':name, 'price':price, 'component':component, 'seller':seller});
     }
 
-    getProducts(){
-        return this.httpClient.get(environment.apiUrl + 'product/getProducts');
+    getDina(){
+        return this.httpClient.get(environment.apiUrl + 'dina/getDina');
     }
 
-    updateProduct(name:string, price:number) {
-        return this.httpClient.patch(environment.apiUrl + 'product/updateProduct/:productId', {'name':name, 'price':price});
+    updateDina(id:object, name:string, price:number,component:string, seller: string) {
+        return this.httpClient.patch(environment.apiUrl + 'dina/updateDina/' + id, {'name':name, 'price':price, 'component':component, 'seller':seller});
     }
 
+    deleteDina(id:object){
+        return this.httpClient.delete(environment.apiUrl+ 'dina/deleteDina/'+id);
+    }
 }

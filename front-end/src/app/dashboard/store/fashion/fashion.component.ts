@@ -4,7 +4,7 @@ import {FashionService } from './fashion.service'
 
 @Component({
     selector: 'app-fashion',
-    template: '<ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)"></ng2-smart-table>',
+    template: '<ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateCall($event)" (editConfirm)="onEditCall($event)" (deleteConfirm)="onDeleteCall($event)" ></ng2-smart-table>',
     providers: [FashionService]
 })
 export class FashionComponent implements OnInit {
@@ -15,6 +15,9 @@ export class FashionComponent implements OnInit {
         },
         edit: {
             confirmSave: true,
+        },
+        delete: {
+          confirmDelete: true,
         },
         columns: {
             name: {
@@ -29,21 +32,19 @@ export class FashionComponent implements OnInit {
             updatedAt: {
                 title: 'Updated At'
             },
-            sellername: {
+            component: {
+                title: 'Component number'
+            },
+            seller: {
                 title: 'Seller name'
             }
         }
     };
 
     data = [
-        {
-            // name: "Dina Hisham",
-            // price: "10",
-            // createdAt: "2/2/2018",
-            // updatedAt: "2/4/2018",
-            // sellername: "dodo"
+        {}
 
-        }]
+        ]
 
     constructor(private fashionService: FashionService) {
 
@@ -51,19 +52,27 @@ export class FashionComponent implements OnInit {
 
     onCreateCall(event) {
         event.confirm.resolve(event.newData);
-        this.fashionService.createProduct(event.newData.name, event.newData.price).subscribe();
+        this.fashionService.createDina(event.newData.name, event.newData.price, event.newData.component, event.newData.seller).subscribe();
     }
 
     onEditCall(event) {
-        event.confirm.resolve(event.newData);
-        this.fashionService.updateProduct(event.newData.name, event.newData.price).subscribe();
+        event.confirm.resolve(event.newData)
+        console.log(event.newData._id);
+        this.fashionService.updateDina(event.newData._id, event.newData.name, event.newData.price, event.newData.component, event.newData.seller).subscribe();
+    }
+
+    onDeleteCall(event){
+        event.confirm.resolve(event.data._id);
+        console.log(event.data._id);
+        this.fashionService.deleteDina(event.data._id).subscribe();
     }
 
     ngOnInit() {
-        this.fashionService.getProducts().subscribe(
-            (res: Response) => {
-              //  console.log(res.data)
-               // this.data = res.data;
+        this.fashionService.getDina().subscribe(
+            (res: any) => {
+               // console.log(res.data)
+                if(res.hasOwnProperty('data'))
+                this.data = res.data;
             }
         );
 
