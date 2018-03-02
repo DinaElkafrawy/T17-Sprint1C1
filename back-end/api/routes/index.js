@@ -8,15 +8,15 @@ var express = require('express'),
 
 
 //-------------------------------Product Routes-----------------------------------
-router.get('/dina/getDina', productCtrl.getDina);
-router.get('/dina/getDina/:productId', productCtrl.getDina);
+router.get('/c1/getDina', productCtrl.getDina);
+router.get('/c1/getDina/:productId', productCtrl.getDina);
 router.get(
-  '/dina/getDinaBelowPrice/:price',
+  '/c1/getDinaBelowPrice/:price',
   productCtrl.getDinaBelowPrice
 );
-router.post('/dina/createDina', productCtrl.createDina);
-router.patch('/dina/updateDina/:productId', productCtrl.updateDina);
-router.delete('/dina/deleteDina/:productId', productCtrl.deleteDina);
+router.post('/c1/createDina', productCtrl.createDina);
+router.patch('/c1/updateDina/:productId', productCtrl.updateDina);
+router.delete('/c1/deleteDina/:productId', productCtrl.deleteDina);
 
 
 app.use('/authentication' , authentication);

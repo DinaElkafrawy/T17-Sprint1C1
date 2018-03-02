@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
 
-var C1Schema = mongoose.Schema({
+
+var c1Schema = mongoose.Schema({
+
     name: {
         type: String,
         required: true,
@@ -34,4 +36,8 @@ var C1Schema = mongoose.Schema({
     }
 });
 
-mongoose.model('C1', C1Schema);
+
+
+
+mongoose.model('C1', c1Schema);
+

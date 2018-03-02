@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'),
     moment = require('moment'),
     Validations = require('../utils/Validations'),
-    Dina = mongoose.model('C1');
+    C1 = mongoose.model('C1');
+
 
 module.exports.getDina = function(req, res, next) {
     if (!Validations.isObjectId(req.params.productId)) {
@@ -11,11 +12,11 @@ module.exports.getDina = function(req, res, next) {
             data: null
         });
     }
-    Dina.findById(req.params.productId).exec(function(err, dina) {
+    Dina.findById(req.params.productId).exec(function(err, c1) {
         if (err) {
             return next(err);
         }
-        if (!dina) {
+        if (!c1) {
             return res
                 .status(404)
                 .json({ err: null, msg: 'Product not found.', data: null });
@@ -23,20 +24,20 @@ module.exports.getDina = function(req, res, next) {
         res.status(200).json({
             err: null,
             msg: 'Product retrieved successfully.',
-            data: dina
+            data: c1
         });
     });
 };
 
 module.exports.getDina = function(req, res, next) {
-    Dina.find({}).exec(function(err, dina) {
+    C1.find({}).exec(function(err, c1) {
         if (err) {
             return next(err);
         }
         res.status(200).json({
             err: null,
             msg: 'Products retrieved successfully.',
-            data: dina
+            data: c1
         });
     });
 };
@@ -49,11 +50,11 @@ module.exports.getDinaBelowPrice = function(req, res, next) {
             data: null
         });
     }
-    Dina.find({
+    C1.find({
         price: {
             $lt: req.params.price
         }
-    }).exec(function(err, dina) {
+    }).exec(function(err, c1) {
         if (err) {
             return next(err);
         }
@@ -63,7 +64,7 @@ module.exports.getDinaBelowPrice = function(req, res, next) {
             'Products priced below ' +
             req.params.price +
             ' retrieved successfully.',
-            data: dina
+            data: c1
         });
     });
 };
@@ -89,14 +90,14 @@ module.exports.createDina = function(req, res, next) {
     delete req.body.createdAt;
     delete req.body.updatedAt;
 
-    Dina.create(req.body, function(err, dina) {
+    C1.create(req.body, function(err, c1) {
         if (err) {
             return next(err);
         }
         res.status(201).json({
             err: null,
             msg: 'Product was created successfully.',
-            data: dina
+            data: c1
         });
     });
 };
@@ -130,7 +131,7 @@ module.exports.updateDina = function(req, res, next) {
     delete req.body.createdAt;
     req.body.updatedAt = moment().toDate();
 
-    Dina.findByIdAndUpdate(
+    C1.findByIdAndUpdate(
         req.params.productId,
         {
             $set: req.body
@@ -161,7 +162,7 @@ module.exports.deleteDina = function(req, res, next) {
             data: null
         });
     }
-    Dina.findByIdAndRemove(req.params.productId).exec(function(
+    C1.findByIdAndRemove(req.params.productId).exec(function(
         err,
         deletedDina
     ) {
