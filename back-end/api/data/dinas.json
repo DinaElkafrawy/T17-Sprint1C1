@@ -1,0 +1,6 @@
+{"_id":{"$oid":"5a996cba2d59532574d423d9"},"name":"adidas","price":500,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:24:42.289Z"},"updatedAt":{"$date":"2018-03-02T15:24:42.289Z"},"__v":0}
+{"_id":{"$oid":"5a996cd52d59532574d423da"},"name":"chanel","price":650,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:25:09.841Z"},"updatedAt":{"$date":"2018-03-02T15:25:09.841Z"},"__v":0}
+{"_id":{"$oid":"5a996cf52d59532574d423db"},"name":"calvin klein","price":580,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:25:41.094Z"},"updatedAt":{"$date":"2018-03-02T15:25:41.094Z"},"__v":0}
+{"_id":{"$oid":"5a996d092d59532574d423dc"},"name":"h\u0026m","price":200,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:26:01.739Z"},"updatedAt":{"$date":"2018-03-02T15:26:01.739Z"},"__v":0}
+{"_id":{"$oid":"5a996d1f2d59532574d423dd"},"name":"nike","price":450,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:26:23.423Z"},"updatedAt":{"$date":"2018-03-02T15:26:23.423Z"},"__v":0}
+{"_id":{"$oid":"5a996d502d59532574d423de"},"name":"gant","price":488,"component":"c1","seller":"dinahisham","createdAt":{"$date":"2018-03-02T15:27:12.425Z"},"updatedAt":{"$date":"2018-03-02T15:27:12.425Z"},"__v":0}
