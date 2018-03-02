@@ -51,21 +51,36 @@ export class FashionComponent implements OnInit {
     }
 
     onCreateCall(event) {
+        var decodedCookie = decodeURIComponent(document.cookie);
+   var ca = decodedCookie.split(';');
+   if (ca[1]==" null"){
+    setTimeout(function() { alert("YOU MUST LOGIN TO CREATE PRODUCT"); }, 5);
+}else{
         event.confirm.resolve(event.newData);
-        this.fashionService.createDina(event.newData.name, event.newData.price, event.newData.component, event.newData.seller).subscribe();
-    }
+        this.fashionService.createDina(event.newData.name, event.newData.price, event.newData.component, ca[1]).subscribe();
+    } }
 
     onEditCall(event) {
+        var decodedCookie = decodeURIComponent(document.cookie);
+   var ca = decodedCookie.split(';');
+   if (ca[1]==" null"){
+    setTimeout(function() { alert("YOU MUST LOGIN TO EDIT PRODUCT"); }, 5);
+}else{
         event.confirm.resolve(event.newData)
         console.log(event.newData._id);
         this.fashionService.updateDina(event.newData._id, event.newData.name, event.newData.price, event.newData.component, event.newData.seller).subscribe();
     }
-
+    }
     onDeleteCall(event){
+        var decodedCookie = decodeURIComponent(document.cookie);
+   var ca = decodedCookie.split(';');
+   if (ca[1]==" null"){
+    setTimeout(function() { alert("YOU MUST LOGIN TO DELETE PRODUCT"); }, 5);
+}else{
         event.confirm.resolve(event.data._id);
         console.log(event.data._id);
         this.fashionService.deleteDina(event.data._id).subscribe();
-    }
+    } }
 
     ngOnInit() {
         this.fashionService.getDina().subscribe(
@@ -78,4 +93,3 @@ export class FashionComponent implements OnInit {
 
     }
 }
-
