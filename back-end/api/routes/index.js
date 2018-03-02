@@ -1,6 +1,6 @@
 var express = require('express'),
   router = express.Router(),
-  productCtrl = require('../controllers/DinaController');
+  productCtrl = require('../controllers/C1Controller');
 
   const authentication = require('../controllers/authentication')(router);
   app = express();
