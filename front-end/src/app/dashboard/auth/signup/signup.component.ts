@@ -24,20 +24,27 @@ export class SignupComponent implements OnInit {
       email:this.email,
       password:this.password
 }
+var flag ;
       this.regService.addReg(userob).subscribe(Response=>{
       this.users.add(userob);
+      flag='b';
       setTimeout(function() { alert("User Saved"); }, 5);
       window.location.href="#/dashboard/authe/login";
 
   });
-  window.location.href="#/dashboard/authe/signup";
+  setTimeout(function() { if(flag=='b'){
+      
+  }
+  else{
+    alert("Your email is used or you entered a wrong data");
+  }
+     }, 1000);
 
     console.log(userob);
 
   }
 
   ngOnInit() {
-    setTimeout(function() { alert("If you did not redirected to the login page after registeration this mean that registeration failed"); }, 5);
   }
 
  
