@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 
       this.regService.LogIn(userob).subscribe(Response=>{  
         setTimeout(function() { alert("Logged in"); }, 5);
-        // lw dakhl hna m3naha en logged fa lw 3ayz tktb code 3la asas eni logged in ektbo hna 
+        document.cookie=this.email; 
         window.location.href="#/dashboard";
         
 
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   //console.log(this.users)
   }
 
-  ngOnInit() {
+  ngOnInit() {  
   }
 
 }

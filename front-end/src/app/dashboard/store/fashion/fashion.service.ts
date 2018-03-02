@@ -7,16 +7,20 @@ export class FashionService {
 
     constructor(private httpClient: HttpClient) { }
 
-    createProduct(name:string, price:number) {
-        return this.httpClient.post(environment.apiUrl + 'product/createProduct', {'name':name, 'price':price});
+    createProduct(name:string, price:number , sellername : string) {
+        return this.httpClient.post(environment.apiUrl + 'product/createProduct', {'name':name, 'price':price , 'sellername':sellername});
     }
 
     getProducts(){
         return this.httpClient.get(environment.apiUrl + 'product/getProducts');
     }
 
-    updateProduct(name:string, price:number) {
-        return this.httpClient.patch(environment.apiUrl + 'product/updateProduct/:productId', {'name':name, 'price':price});
-    }
+    updateProduct(id:object, name:string, price:number) {
+        return this.httpClient.patch(environment.apiUrl + 'product/updateProduct/'+id,{'name':name, 'price':price});
+      }
+    deleteProduct(id:object){
+        return this.httpClient.delete(environment.apiUrl+ 'product/deleteProduct/'+id);
+      }
+    
 
 }
