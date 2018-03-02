@@ -1,0 +1,76 @@
+[{
+	"_id": {
+		"$oid": "5a99a2fe7eaabd2260598dfd"
+	},
+	"name": "shampoo",
+	"price": 25,
+	"sellername": "zeiad",
+	"createdAt": {
+		"$date": "2018-03-02T19:16:14.625Z"
+	},
+	"updatedAt": {
+		"$date": "2018-03-02T19:16:14.625Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "5a99a32c7eaabd2260598dfe"
+	},
+	"name": "cards",
+	"price": 30,
+	"sellername": "zeiad",
+	"createdAt": {
+		"$date": "2018-03-02T19:17:00.315Z"
+	},
+	"updatedAt": {
+		"$date": "2018-03-02T19:17:00.315Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "5a99a3317eaabd2260598dff"
+	},
+	"name": "ball",
+	"price": 10,
+	"sellername": "zeiad",
+	"createdAt": {
+		"$date": "2018-03-02T19:17:05.636Z"
+	},
+	"updatedAt": {
+		"$date": "2018-03-02T19:17:05.636Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "5a99a33a7eaabd2260598e00"
+	},
+	"name": "nike",
+	"price": 30,
+	"sellername": "zeiad",
+	"createdAt": {
+		"$date": "2018-03-02T19:17:14.230Z"
+	},
+	"updatedAt": {
+		"$date": "2018-03-02T19:17:14.230Z"
+	},
+	"__v": 0
+},
+{
+	"_id": {
+		"$oid": "5a99a3477eaabd2260598e01"
+	},
+	"name": "mouse",
+	"price": 40,
+	"sellername": "zeiad",
+	"createdAt": {
+		"$date": "2018-03-02T19:17:27.778Z"
+	},
+	"updatedAt": {
+		"$date": "2018-03-02T19:17:27.778Z"
+	},
+	"__v": 0
+}]
+
