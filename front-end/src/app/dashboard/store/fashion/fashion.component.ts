@@ -64,7 +64,7 @@ export class FashionComponent implements OnInit {
             setTimeout(function() { alert("YOU MUST LOGIN TO CREATE PRODUCT"); }, 5);
         }else{
             event.confirm.resolve(event.newData);
-        this.fashionService.createProduct(event.newData.name, event.newData.price , event.newData.sellername).subscribe();
+        this.fashionService.createProduct(event.newData.name, event.newData.price , ca[1]).subscribe();
         }
         //event.confirm.resolve(event.newData);
         //this.fashionService.createProduct(event.newData.name, event.newData.price , event.newData.sellername).subscribe();
