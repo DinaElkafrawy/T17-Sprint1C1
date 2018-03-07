@@ -3,6 +3,7 @@ var mongoose = require('mongoose'),
     Validations = require('../utils/Validations'),
     C1 = mongoose.model('C1');
 
+
 module.exports.getDina = function(req, res, next) {
     if (!Validations.isObjectId(req.params.productId)) {
         return res.status(422).json({
